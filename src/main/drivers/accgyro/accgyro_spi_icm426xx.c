@@ -181,7 +181,7 @@ void icm426xxGyroInit(gyroDev_t *gyro) {
 bool icm426xxSpiGyroDetect(gyroDev_t *gyro) {
     switch (gyro->mpuDetectionResult.sensor) {
     case ICM_42605_SPI:
-    case ICM_426xx_SPI:
+    case ICM_42688P_SPI:
         break;
     default:
         return false;

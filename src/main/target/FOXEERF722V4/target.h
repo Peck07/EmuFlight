@@ -26,20 +26,20 @@
 #define USE_GYRO
 #define USE_ACC
 #define USE_EXTI
-#define USE_GYRO_SPI_MPU6000
-#define USE_ACC_SPI_MPU6000
-//#define USE_GYRO_SPI_ICM42688P
-//#define USE_ACC_SPI_ICM42688P
+//#define USE_GYRO_SPI_MPU6000
+//#define USE_ACC_SPI_MPU6000
+#define USE_GYRO_SPI_ICM42688P
+#define USE_ACC_SPI_ICM42688P
 
 #define MPU_INT_EXTI                PC4
-#define MPU6000_CS_PIN              PB2
-//#define ICM42688P_CS_PIN            PB2
-#define MPU6000_SPI_INSTANCE        SPI1
-//#define ICM42688P_SPI_INSTANCE    SPI1
-#define GYRO_MPU6000_ALIGN          CW270_DEG
-//#define GYRO_ICM42688P_ALIGN          CW270_DEG
-#define ACC_MPU6000_ALIGN           CW270_DEG
-//#define ACC_ICM42688P_ALIGN           CW270_DEG
+//#define MPU6000_CS_PIN              PB2
+#define ICM42688P_CS_PIN            PB2
+//#define MPU6000_SPI_INSTANCE        SPI1
+#define ICM42688P_SPI_INSTANCE    SPI1
+//#define GYRO_MPU6000_ALIGN          CW270_DEG
+#define GYRO_ICM42688P_ALIGN          CW270_DEG
+//#define ACC_MPU6000_ALIGN           CW270_DEG
+#define ACC_ICM42688P_ALIGN           CW270_DEG
 
 #define USE_MPU_DATA_READY_SIGNAL
 #define ENSURE_MPU_DATA_READY_IS_LOW

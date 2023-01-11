@@ -49,6 +49,7 @@
 #include "drivers/accgyro/accgyro_spi_mpu6000.h"
 #include "drivers/accgyro/accgyro_spi_mpu6500.h"
 #include "drivers/accgyro/accgyro_spi_mpu9250.h"
+#include "drivers/accgyro/accgyro_spi_icm426xx.h"
 
 #ifdef USE_GYRO_L3G4200D
 #include "drivers/accgyro_legacy/accgyro_l3g4200d.h"
