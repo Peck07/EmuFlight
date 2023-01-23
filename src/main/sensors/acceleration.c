@@ -306,9 +306,15 @@ retry:
             switch (dev->mpuDetectionResult.sensor) {
             case ICM_42605_SPI:
                 accHardware = ACC_ICM42605;
+#ifdef ACC_ICM42605_ALIGN
+            dev->accAlign = ACC_ICM42605_ALIGN;
+#endif
                 break;
             case ICM_42688P_SPI:
                 accHardware = ACC_ICM42688P;
+#ifdef ACC_ICM42688P_ALIGN
+            dev->accAlign = ACC_ICM42688P_ALIGN;
+#endif
                 break;
             default:
                 accHardware = ACC_NONE;

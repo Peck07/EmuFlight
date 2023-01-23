@@ -497,6 +497,31 @@ STATIC_UNIT_TESTED gyroSensor_e gyroDetect(gyroDev_t *dev) {
         }
         FALLTHROUGH;
 #endif
+#if defined(USE_GYRO_SPI_ICM42605) || defined(USE_GYRO_SPI_ICM42688P)
+    case GYRO_ICM42605:
+    case GYRO_ICM42688P:
+        if (icm426xxSpiGyroDetect(dev)) {
+            switch (dev->mpuDetectionResult.sensor) {
+            case ICM_42605_SPI:
+                gyroHardware = GYRO_ICM42605;
+#ifdef GYRO_ICM42605_ALIGN
+            dev->gyroAlign = GYRO_ICM42605_ALIGN;
+#endif
+                break;
+            case ICM_42688P_SPI:
+                gyroHardware = GYRO_ICM42688P;
+#ifdef GYRO_ICM42688P_ALIGN
+            dev->gyroAlign = GYRO_ICM42688P_ALIGN;
+#endif
+                break;
+            default:
+                gyroHardware = GYRO_NONE;
+                break;
+            }
+            break;
+        }
+        FALLTHROUGH;
+#endif
 #ifdef USE_ACCGYRO_BMI160
     case GYRO_BMI160:
         if (bmi160SpiGyroDetect(dev)) {
